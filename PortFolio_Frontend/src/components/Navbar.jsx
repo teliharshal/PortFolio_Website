@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 
-const navLinks = ["Skills", "Experience", "Projects", "Contact"];
+const navLinks = ["Home","Skills", "Experience", "Projects", "Contact"];
 
 const navVariants = {
   hidden: { y: -80, opacity: 0 },

@@ -23,7 +23,7 @@ const Hero = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 }}
     >
-      Hey there! <span className="text-teal-400">I'm Harshal Teli</span>
+      Hii! <span className="text-teal-400">I'm Harshal Teli</span>
     </motion.h1>
 
     {/* Typing Effect */}
