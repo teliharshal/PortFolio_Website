@@ -1,4 +1,4 @@
-import React from "react";
+import {useState} from "react";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -10,15 +10,21 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 const App = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+
   return (
-    <div className="bg-gray-100">
-      <Navbar />
-      <Hero />
-      <Skills/>
-      <ExperienceSection/>
-      <ProjectsSection/>
-      <Contact/>
-      <Footer/>
+        <div className={isDarkMode ? 'dark' : ''}>
+      <div className="bg-slate-200 dark:bg-gray-900 text-black dark:text-white transition-all duration-500 min-h-screen">
+        <Navbar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+        <Hero />
+        <Skills/>
+        <ExperienceSection/>
+        <ProjectsSection/>
+        <Contact/>
+        <Footer />
+      </div>
     </div>
   );
 };

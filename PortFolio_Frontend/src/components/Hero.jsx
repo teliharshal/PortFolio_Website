@@ -1,20 +1,38 @@
+import React, { useEffect, useState } from 'react';
 import { ReactTyped } from "react-typed";
 import { motion } from "framer-motion";
 import HeroCanvas from "./HeroCanvas";
 
 const Hero = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      setIsDarkMode(document.documentElement.classList.contains('dark'));
+    };
+
+    // Check once on mount
+    checkDarkMode();
+
+    // Optional: Update if you support a toggle button
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+    return () => observer.disconnect();
+  }, []);
+
  return ( <section
   id="home"
   className="relative min-h-screen flex items-center justify-center px-6 md:px-20 bg-slate-900 overflow-hidden"
 >
   {/* Background Canvas */}
   <div className="absolute inset-0 z-0">
-    <HeroCanvas />
+    <HeroCanvas isDarkMode={isDarkMode}/>
     <div className="absolute inset-0 bg-gradient-to-b from-gray-100 via-slate-100/20 to-slate-500/90 z-10" />
   </div>
 
   {/* Hero Content */}
-  <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 flex flex-col items-center justify-center text-center font-[Inter]">
+  <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 flex flex-col items-center justify-center text-center font-[Inter]  ">
     
     {/* Heading */}
     <motion.h1
@@ -23,7 +41,7 @@ const Hero = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 }}
     >
-      Hii! <span className="text-teal-400">I'm Harshal Teli</span>
+      Hi! <span className="text-teal-400">I'm Harshal Teli</span>
     </motion.h1>
 
     {/* Typing Effect */}
@@ -33,7 +51,7 @@ const Hero = () => {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.5 }}
     >
-      <span className="text-3xl text-white">I’m a</span>
+      <span className="text-3xl text-white">I am a</span>
       <span className="font-bold text-4xl text-cyan-400 drop-shadow-lg">
         <ReactTyped
           strings={[

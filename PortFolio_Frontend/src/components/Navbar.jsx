@@ -67,13 +67,6 @@ const Navbar = () => {
       ))}
     </nav>
 
-    {/* Mobile Menu Button
-    <div className="md:hidden">
-      <motion.button onClick={() => setMenuOpen(!menuOpen)} whileTap={{ rotate: 180 }}>
-        {menuOpen ? <FiX size={26} /> : <FiMenu size={26} />}
-      </motion.button>
-    </div>
-  </div> */}
 
         {/* Mobile Toggle */}
         <div className="md:hidden">

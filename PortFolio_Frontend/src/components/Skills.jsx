@@ -47,7 +47,7 @@ const skills = [
 
 const Skills = () => {
   return (
-   <section id="skills" className="relative bg-slate-200 py-20 px-4 overflow-hidden">
+   <section id="skills" className="relative  dark:bg-slate-800 bg-gray-50 py-20 px-4 overflow-hidden">
   {/* Background Canvas
   <div className="absolute inset-0 z-0">
     <HeroCanvas />
@@ -57,7 +57,7 @@ const Skills = () => {
   {/* Content */}
   <div className="relative z-10 max-w-6xl mx-auto text-center">
     <motion.h2
-       className="text-4xl font-bold text-gray-800 mb-12"
+       className="text-4xl font-bold text-gray-800 mb-12 dark:text-white"
        initial={{ opacity: 0, y: 40 }}
        whileInView={{ opacity: 1, y: 0 }}
        transition={{ duration: 0.5 }}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -23,10 +24,16 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 px-4 bg-gray-200">
+    <section id="contact" className="py-20 px-4 bg-gray-50 dark:bg-slate-800">
       <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-slate-900 mt-[-4] mb-6">Contact Me</h2>
-    
+        <motion.h2
+          className="text-4xl font-bold text-gray-800 mb-12 dark:text-white"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          Contact Me 
+        </motion.h2>
         <form
           onSubmit={handleSubmit}
           className="bg-white shadow-md rounded-xl p-8 space-y-6 text-left"

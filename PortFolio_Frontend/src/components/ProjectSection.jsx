@@ -51,10 +51,10 @@ export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
-    <section id="projects" className="bg-slate-200 py-20 px-4">
+    <section id="projects" className="bg-gray-50 py-21 px-4 dark:bg-slate-800">
       <div className="max-w-6xl mx-auto text-center">
         <motion.h2
-          className="text-4xl font-bold text-gray-800 mb-12"
+          className="text-4xl font-bold text-gray-800 mb-12 dark:text-white"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}

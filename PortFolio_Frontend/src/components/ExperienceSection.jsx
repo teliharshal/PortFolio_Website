@@ -29,10 +29,10 @@ const experiences = [
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="bg-slate-200 py-20 px-4">
+    <section id="experience" className="bg-gray-50 py-20 px-4 dark:bg-slate-800">
       <div className="max-w-5xl mx-auto text-center relative z-10 mb-10">
         <motion.h2
-          className="text-4xl font-bold text-gray-800 mb-12"
+          className="text-4xl font-bold text-gray-800 mb-12 dark:text-white"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
